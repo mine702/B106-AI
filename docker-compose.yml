@@ -49,3 +49,11 @@ services:
         reservations:
           cpus: "0" # 예약 없음
           memory: "0" # 예약 없음
+
+  math:
+    image: mine0702/potless-math
+    restart: unless-stopped
+    container_name: app_math
+    stdin_open: true
+    expose:
+      - "5000" # 백엔드 서비스가 사용하는 포트, 외부에 노출하지 않음 
